@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Centered Card for Recipe Search -->
+<div class="d-flex justify-content-center align-items-center min-vh-100" style="background: none; margin-top:-80px;">
+  <div class="w-100" style="max-width: 520px; background:rgba(255,255,255,0.97); box-shadow:0 8px 32px 0 rgba(91,122,58,0.13); border-radius:22px; border:1.5px solid #e9f5db; padding:2.5rem 2rem 2rem 2rem;">
+    <h1 class="mb-4 text-center fw-bold" style="color:#5b7a3a; font-size:2.2rem; letter-spacing:1px; text-shadow:0 2px 8px rgba(91,122,58,0.13);">
+      <i class="bi bi-emoji-laughing me-3"></i>Recipe Recommender
+    </h1>
+    <form action="/search" method="post">
+      <div class="mb-3">
+        <label for="ingredients" class="form-label">Ingredients (comma‑separated):</label>
+        <input type="text" id="ingredients" name="ingredients" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="course" class="form-label">Course:</label>
+        <input type="text" id="course" name="course" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label for="diet" class="form-label">Diet:</label>
+        <input type="text" id="diet" name="diet" class="form-control" />
+      </div>
+      <div class="mb-4">
+        <label for="threshold" class="form-label">Relevance Threshold (0–1):</label>
+        <input type="number" step="0.1" id="threshold" name="threshold" value="0.4" min="0" max="1" class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-success w-100 fw-semibold" style="font-size:1.1rem; letter-spacing:0.5px;">Search</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
